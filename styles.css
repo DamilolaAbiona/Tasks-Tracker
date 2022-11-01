@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+:root {
+    --white: #fff;
+    --black: #1c2b2d;
+    --blue: #31326f;
+    --light-blue: #005490;
+    --color-primary: #9d0191;
+    --color-sec: #db6400;
+    --color-grey: #eee;
+    --color-dark-grey: #222831;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    width: 100vw;
+    height: 100vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    font-size: 1.6rem;
+    /* line-height: 1.5; */
+    padding: 0rem;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Start here */
+body{
+    background-color: var(--color-grey);
+}
+.main{
+    background: url(./images/lauren-mancke-aOC7TSLb1o8-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    z-index: 0;}
+
+.main::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: -2;
+}
+.task-header,
+.task-form
+.task-list{
+    width: 70%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    position: relative;
+    
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+.class-date{
+    background-color: #eee;
+    border-radius: 5px ;
+    padding: 0rem 1rem;
+    margin-bottom: .5rem;
+}
+time{
+    display: block;
+}
+.current-date {
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.current-time {
+    font-size: 1.6rem;
+}
+button.clear {
+ padding: 1rem 1.5rem;
+ color: var(--white);
+ border-radius: 5px;
+ font-size: 1.7rem;
+ font-weight: 400;
+ background-color: orangered;
+ transition: all .4s ease-in-out;
+ cursor: pointer;
+ 
+}
+button.clear:hover{
+background-color:red;
+}
+h1{
+    font-size: 3rem;
+    
+}
+.total-task{
+    font-size: 1.2rem;
+
+    background-color:orangered;
+    display: inline-block;
+    padding: .4rem .7rem;
+    border-radius: 5px;
+
+    text-transform: capitalize;
+}
+ .fa-plus {
+    position: absolute;
+    right:4rem;
+    bottom: 1rem;
+    background-color: green;
+    padding: 1.5rem ;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .1s ease;
+    z-index: 1111;
+}
+.fa-plus:hover{
+    font-size: 1.8rem;
+    
+}
+.fa-times{
+     position: absolute;
+    right:4rem;
+    bottom: 1rem;
+    display: none;
+    background-color: orangered;
+    font-size: 1.5rem;
+    padding: 1.5rem ;
+    border-radius:50%;
+    cursor: pointer;
+    transition: all .1s ease;
+    z-index: 1111;
+    
+}
+.fa-times:hover{
+font-size: 1.8rem;
+}
+.task-form {
+    position: absolute;
+    width: 40%;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, .8);
+    transition: all .5s ease;
+}
+form{
+    width: 80%;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+form >*{
+    display: block;
+    margin-bottom: 1rem;
+    width: 80%;
+    padding: .8rem 0;
+    border-radius: 5px;
+}
+form input::-webkit-calendar-picker-indicator{
+    cursor: pointer;
+}
+form button{
+    background-color: orangered;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 1s ease;
+}
+form button:hover{
+    background-color: rgb(225, 60, 0);
+}
+/* Task List Section */
+.task-text{
+        display:inline-block ;
+     }
+     .task-icons >* {
+        font-size: 1.5rem;
+        margin-left: 5px;
+        cursor: pointer;
+     }
+     .cal{
+        display: none;
+     }
+     .fa-check{
+        color: green;
+        position: relative;
+        font-size: 2rem;
+
+     }
+    .fa-edit{
+        color: var(--color-primary);
+        position: relative;
+         font-size: 2rem;
+    }
+    .fa-trash-alt{
+        color: red;
+        position: relative;
+         font-size: 2rem;
+    }
+    .fa-check:hover::after{
+        position: absolute;
+        content: "completed";
+        bottom: -3rem;
+        left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 3px;
+    color: white;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, .7);
+    }
+    .fa-edit:hover::after{
+        position: absolute;
+        content: "Edit";
+        bottom: -3rem;
+        left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 3px;
+    color: white;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, .7);
+    }
+    .fa-trash-alt:hover::after{
+        position: absolute;
+        content: "Delete";
+        bottom: -3rem;
+        left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    font-weight: 300;
+    border-radius: 3px;
+    color: white;
+    padding: 3px;
+    background-color: rgba(0, 0, 0, .7);
+    }
+    .task-list{
+        margin-top: 9rem;
+         
+    }
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, .1);
+    padding: 1rem;
+    border-left: 5px solid;
+    border-color: var(--color-sec);
+    border-radius: 0 3px 3px 0;
+    margin: 5px 0;
+    margin-top: 2rem;
+    height: 10vh;
+  
+
+}
+.completed{
+       border-color:green;
+       position: relative;
+       font-size: 1.3rem;
+}
+.completed::after{
+    position: absolute;
+    content: "completed";
+    right: 1rem;
+    bottom: 1rem;
+    animation: slide-in .7s ease-in-out;
+
+}
+    @keyframes slide-in {
+        0%{
+            right: 8rem;
+        }
+        100%{
+            right: 2rem;
+        }
+    }
+.task-index{
+    font-size: 1.2rem;
+    background-color: var(--color-primary);
+    color: var(--white);
+    padding: 5px 1rem;
+    border-radius: 50%;
+    margin-top: .5rem;
+}
+
+.task-section{
+    width: 100%;
+}
+/* MODAL SECTION */
+     /* MODAL SECTION */
+    /* MODAL SECTION */
+
+.confirm{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: open .2s forwards;
+
+}
+.close-modal{
+   display: none; 
+}
+.confirm-modal{
+    width: 100%;
+    max-width: 50rem;
+    background-color: white;
+    font-size: 1.4rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    transform: scale(0.7);
+    animation:open-modal 0.2s ;
+    border-radius: 3px;
+    overflow: hidden;
+
+}
+
+@keyframes open-modal {
+    to{
+        transform: scale(1);
+    }
+    
+}
+ @keyframes open {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+ }  
+ .header{
+    background-color: var(--color-dark-grey);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+ }  
+ .title{
+    font-size: 1.6rem;
+    font-weight: 700;
+ }
+ .close{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+    font-size: 2.5rem;
+ }
+ .close:hover{
+    color: red;
+ }
+
+.content{
+    padding: 2rem 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.buttons{
+    background-color: var(--color-grey);
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1.5rem;
+}
+.btn{
+    padding: .8rem 1rem;
+    border: 2px solid var(--light-blue);
+    border-radius: 5px;
+    color: var(--light-blue);
+    font-weight: 700;
+    background: var(--white);
+    outline: none;
+    margin-left: 5px;
+    transition: all .2s ease;
+
+}
+.btn:hover{
+    font-size: 1.7rem;
+}
+.btn-ok{
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA SCREEN */
+@media screen and (max-width: 600px) {
+    .task-form,
+    .task-header
+    .task-list{
+        width: 100%;
+    }
+    form {
+  padding-right: 4rem;
+    }
+     .task-list{
+        margin: 0 auto;
+        width: 50%;
+     }
+     
+}
+@media screen and (max-width: 800px) {
+    .task-form,
+    .task-list{
+        width: 100%;
+    }
+    .task-header{
+    width: 65%;
+    }
+
+    .task-list{
+        margin: 0 auto;
+        width: 50%;
+        /* text-align: center; */
+     }
+     h1{
+        margin-bottom: .6rem;
+     }
+     .clear{
+        padding: 0rem ;
+     }
+    form {
+        width: 100%;
+    }
+    .task-form{
+        width: 100%;
+    }
+    .task-list{
+    width: 100%;
+}
+button.clear{
+    padding: 0rem 4rem;
+    font-size: 1.rem;
+    display: block;
+    margin-top: 0rem;
+    width: 45%;
+    
+}
+.task{
+    height: 30vh;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
